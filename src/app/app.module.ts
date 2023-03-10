@@ -22,7 +22,6 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { HeaderComponent } from './component/layout/header/header.component';
 import { FooterComponent } from './component/layout/footer/footer.component';
 import { ListeCommandeComponent } from './component/liste-commande/liste-commande.component';
-import { DashboardComponent } from './component/pages/administrateur/dashboard/dashboard.component';
 import { PageLivreurComponent } from './component/pages/livreur/page-livreur/page-livreur.component';
 import { HeaderAdminComponent } from './component/pages/administrateur/layout/header-admin/header-admin.component';
 import { ListeEmployerComponent } from './component/pages/administrateur/liste-employer/liste-employer.component';
@@ -30,6 +29,8 @@ import { GestionLivreurComponent } from './component/pages/administrateur/gestio
 import { GestionServeurComponent } from './component/pages/administrateur/gestion-serveur/gestion-serveur.component';
 import { RouterModule } from '@angular/router';
 import { HeaderLivreurComponent } from './component/pages/livreur/header-livreur/header-livreur.component';
+import { DashboardComponent } from './component/pages/dashboard/dashboard.component';
+import { MenuTrueComponent } from './menu_true/menu_true.component';
 
 
 
@@ -38,6 +39,7 @@ import { HeaderLivreurComponent } from './component/pages/livreur/header-livreur
     AppComponent,
     HeaderComponent,
     ConnexionComponent,
+    CompteComponent,
     MenuComponent,
     AccueilComponent,
     CompteComponent,
@@ -50,13 +52,15 @@ import { HeaderLivreurComponent } from './component/pages/livreur/header-livreur
     BoissonComponent,
     FooterComponent,
     ListeCommandeComponent,
-    DashboardComponent,
     PageLivreurComponent,
     HeaderAdminComponent,
     ListeEmployerComponent,
     GestionLivreurComponent,
     GestionServeurComponent,
     HeaderLivreurComponent,
+    DashboardComponent,
+    
+   
   ],
   imports: [
     BrowserModule,

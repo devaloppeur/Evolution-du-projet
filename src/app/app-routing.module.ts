@@ -11,10 +11,11 @@ import { AjoutEmployeComponent } from './component/ajout-employe/ajout-employe.c
 import { ConnexionComponent } from './component/page_connexion/connexion/connexion.component';
 import { BonCommandeComponent } from './component/bon-commande/bon-commande.component';
 import { AjoutProduitComponent } from './component/pages/produit/ajout-produit/ajout-produit.component';
-import { DashboardComponent } from './component/pages/administrateur/dashboard/dashboard.component';
+import { DashboardComponent } from './component/pages/administrateur/controle/controle.component';
 import { ListeEmployerComponent } from './component/pages/administrateur/liste-employer/liste-employer.component';
 import { GestionLivreurComponent } from './component/pages/administrateur/gestion-livreur/gestion-livreur.component';
 import { GestionServeurComponent } from './component/pages/administrateur/gestion-serveur/gestion-serveur.component';
+import { ListeCommandeComponent } from './component/liste-commande/liste-commande.component';
 
 const routes: Routes = [
   {path: 'panier', component: PanierComponent},
@@ -32,7 +33,8 @@ const routes: Routes = [
   {path:'dashboard', component:DashboardComponent},
   {path:'liste-employer', component:ListeEmployerComponent},
   {path:'gestion-livreur', component:GestionLivreurComponent},
-  {path:'gestion-serveur', component:GestionServeurComponent}
+  {path:'gestion-serveur', component:GestionServeurComponent},
+  {path:'liste-commande', component: ListeCommandeComponent}
   
   
 ];
