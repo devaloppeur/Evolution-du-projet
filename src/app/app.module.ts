@@ -30,7 +30,7 @@ import { GestionServeurComponent } from './component/pages/administrateur/gestio
 import { RouterModule } from '@angular/router';
 import { HeaderLivreurComponent } from './component/pages/livreur/header-livreur/header-livreur.component';
 import { DashboardComponent } from './component/pages/dashboard/dashboard.component';
-import { MenuTrueComponent } from './menu_true/menu_true.component';
+// import { MenuTrueComponent } from './menu_true/menu_true.component';
 
 
 
