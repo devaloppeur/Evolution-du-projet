@@ -1,0 +1,39 @@
+
+body{
+    background-image: -webkit-gradient(linear, left top, right top, from rgb(228, 33, 33), to rgb(228, 33, 33)) !important;
+        background-image: linear-gradient(to right,rgb(228, 33, 33) 0%, rgb(228, 33, 33) 100%) !important;
+        margin-top:50px;}
+ 
+    .login-box {
+      -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+              box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    
+    @media (min-width: 992px) {
+      .login-box {
+        margin: 40px 0;
+      }
+    }
+    
+    .login-box .form-wrap {
+      padding: 30px 25px;
+      border-radius: 10px;
+      -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+              box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+    }
+    
+    @media (min-width: 768px) {
+      .login-box .form-wrap {
+        padding: 45px;
+      }
+    }
+    
+    @media (min-width: 992px) {
+      .login-box .form-wrap {
+        margin-top: -40px;
+        margin-bottom: -40px;
+        padding: 60px;
+      }
+    }
+    
