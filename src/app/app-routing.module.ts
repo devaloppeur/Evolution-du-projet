@@ -15,6 +15,7 @@ import { ListeEmployerComponent } from './pages/administrateur/liste-employer/li
 import { GestionLivreurComponent } from './pages/administrateur/gestion-livreur/gestion-livreur.component';
 import { GestionServeurComponent } from './pages/administrateur/gestion-serveur/gestion-serveur.component';
 import { ListeCommandeComponent } from './component/liste-commande/liste-commande.component';
+import { PageConnexionComponent } from './pages/page-connexion/page-connexion.component';
 
 const routes: Routes = [
   {path: 'panier', component: PanierComponent},
@@ -32,7 +33,8 @@ const routes: Routes = [
   {path:'liste-employer', component:ListeEmployerComponent},
   {path:'gestion-livreur', component:GestionLivreurComponent},
   {path:'gestion-serveur', component:GestionServeurComponent},
-  {path:'liste-commande', component: ListeCommandeComponent}
+  {path:'liste-commande', component: ListeCommandeComponent},
+  {path:'connexion', component:PageConnexionComponent}
   
   
 ];

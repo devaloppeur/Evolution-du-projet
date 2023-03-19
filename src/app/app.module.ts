@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PageConnexionComponent } from './pages/page-connexion/page-connexion.component';
 import { MenuComponent } from './pages/client/menu/menu.component';
-
 import { AccueilComponent } from './pages/client/accueil/accueil.component';
 import { CompteComponent } from './pages/client/compte/compte.component';
 import { ParametreCompteComponent } from './pages/client/parametre-compte/parametre-compte.component';
@@ -53,7 +53,7 @@ import { PanierComponent } from './pages/administrateur/Panier/panier/panier.com
     GestionLivreurComponent,
     GestionServeurComponent,
     HeaderLivreurComponent,
-  
+    PageConnexionComponent,
  
   ],
   imports: [

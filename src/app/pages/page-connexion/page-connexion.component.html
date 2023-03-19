@@ -1,23 +1,29 @@
 
-        <div class="container my-container">
+        <div class="container my-container-fluid " id="form">
             <div class="card justify-content-md-center">
               <div class="card-header text-center">
-                <h3>Authentification</h3>
+                <h1>GESTION DE STOCK</h1>
+                 
+                </div>
+              <div class="card-header text-center "id="bande">
+              
+                <h3>Connexion</h3>
               </div>
-              <div class="card-body">
+              <div class="card-body" id="body">
                 <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="Nom d'utilisateur">
+                  <input type="text" class="form-control" placeholder="Nom d'utilisateur" id="elt">
                 </div>
-                <div class="mb-3">
-                  <input type="password" class="form-control" placeholder="Mot de passe">
+                <div class="mb-3 mt-5">
+                  <input type="password" class="form-control" placeholder="Mot de passe" id="elt">
                 </div>
-                <div class="mb-3 d-flex justify-content-between">
+                <div class="mb-3 d-flex justify-content-between" id="bas">
                   <li class="list-group-item">
                     <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
                     Garder la session ouverte
                   </li>
-                  <button type="button" class="btn btn-primary" [routerLink]=" ['/dashboard'] ">Connexion</button>
+                  <button type="button" class="btn btn-primary" [routerLink]=" ['/dashboard'] " id="connex">Connexion</button>
                 </div>
               </div>
             </div>
           </div>
+
