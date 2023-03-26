@@ -102,7 +102,7 @@ p {
   z-index: 99999;
 }
 .navbar .navbar-brand {
-  font-family: 'Lobster', cursive;
+  font-family: 'times-new-roman';
   font-size: 2.5rem;
 }
 .navbar .navbar-toggler {
@@ -118,7 +118,7 @@ p {
   left: 15px;
   right: 15px;
   height: 2px;
-  background-color: #fff;
+  background-color: #0000;
   opacity: 0;
   -webkit-transform: translateY(-1px);
   -ms-transform: translateY(-1px);
@@ -332,15 +332,15 @@ p {
 
   //carte
   body{margin-top:20px;
-    background:#eee;
+    background:#0000;
     }
     
     .profile-widget {
-      position: relative;
+      position: center;
     }
     .profile-widget .image-container {
       background-size: cover;
-      background-position: center;
+      background-position: relative;
       padding: 190px 0 10px;
     }
     .profile-widget .image-container .profile-background {
@@ -919,8 +919,11 @@ p {
         height: 12px;
     }
     #edit{
-        background-color: red;
+       
         border-color: transparent;
+        width:300px;
+        font-size: 30px;
+        border-radius: 10px;
     }
     #saveur{
       font-family: Georgia, 'Times New Roman', Times, serif;
@@ -930,4 +933,22 @@ p {
     }
     #mon_compte{
       margin-left:370px;
+      background: rgb(207, 207, 207);
+      padding: 3rem;
+      height:1430px;
+      border-radius:20px;
+      border-left: 1px solid rgb(255,255,255,.3) ;
+      border-right: 1px solid rgb(255,255,255,.3) ;
+      border-top: 1px solid rgb(255,255,255,.3) ;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      -moz-backdrop-filter: blur(10px);
+      
+      box-shadow: 20px 20px 40px -6px rgb(0,0,2);
+      text-align: center;
+      width: 1000px;
+    }
+
+    #form{
+      margin-left: 150px;
     }

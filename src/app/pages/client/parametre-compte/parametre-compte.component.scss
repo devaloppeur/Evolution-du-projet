@@ -93,7 +93,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 }
 
 a:hover{
-    background-color:gold;
+    background-color:brown;
     
 }
 a{
@@ -105,9 +105,23 @@ a{
 }
 
 #option:hover{
-    background-color:gold;
+    background-color:brown;
     
 }
 #form{
-    background-color:beige;
+    background-color: linear-gradient(30deg,rgb(119, 100, 100), beige);
+}
+#card{
+    background: rgb(207, 207, 207);
+    padding: 3rem;
+    height:790px;
+    border-radius:20px;
+    border-left: 1px solid rgb(255,255,255,.3) ;
+    border-top: 1px solid rgb(255,255,255,.3) ;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    
+    box-shadow: 20px 20px 40px -6px rgb(0,0,2);
+    text-align: center;
 }

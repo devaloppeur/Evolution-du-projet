@@ -7,7 +7,7 @@
 
 body{
  
-  background: linear-gradient(30deg, rgb(0, 0, 0), rgb(255, 0, 0));
+  background: linear-gradient(30deg,rgb(119, 100, 100), beige);
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -18,7 +18,8 @@ body{
 position: relative;
 }
 #form{
- 
+ margin-left:250px;;
+ margin-top:50px;
 background: rgb(255,255,255,.3);
 padding: 3rem;
 height:500px;
@@ -33,7 +34,7 @@ box-shadow: 20px 20px 40px -6px rgb(0,0,2);
 text-align: center;
 }
 P{
-  color: white;
+  color: black;
   font-weight: 500;
   opacity:.7;
   font-size:1.4rem;
@@ -76,7 +77,7 @@ text-shadow:  2px 2px 4px rgba(0,0,.2);
 margin-bottom: 20px;
 }
 ::placeholder{
-color:white;
+color:black;
 }
 
 input:hover,
@@ -111,17 +112,12 @@ box-shadow: 10px 10px 60px -8px rgba(0,0,0,.2);
 
 .drop-2{
   height:80px; width:80px;
-  bottom:-30px; right:-10px;
+  bottom:-30px; right:-30px;
+  margin-left:15px;
+  z-index: -1;
  
 }
 
-.drop-3{
-  height:80px; width:80px;
-  bottom:-30px; right:-10px;
+
  
-}
-.drop-4{
-  height:80px; width:80px;
-  bottom:-30px; right:-10px;
- 
-}
+

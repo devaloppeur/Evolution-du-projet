@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageLivreurComponent } from './page-livreur.component';
+import { CommandeClientComponent } from './commande-client.component';
 
-describe('PageLivreurComponent', () => {
-  let component: PageLivreurComponent;
-  let fixture: ComponentFixture<PageLivreurComponent>;
+describe('CommandeClientComponent', () => {
+  let component: CommandeClientComponent;
+  let fixture: ComponentFixture<CommandeClientComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageLivreurComponent ]
+      declarations: [ CommandeClientComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PageLivreurComponent);
+    fixture = TestBed.createComponent(CommandeClientComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

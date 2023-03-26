@@ -1,3 +1,4 @@
+
 <header class="containder-fluid header-area overlay " id="header">
     <nav class=" container-fluid navbar navbar-expand-md navbar-dark  navbar-fixed-top" id="menu">
         <div class="container-fluid">
@@ -12,10 +13,25 @@
             
             <div id="main-nav" class="collapse navbar-collapse container-fluid">
                 <ul class="navbar-nav ml-auto">
-                    <li><a routerLink="/menu"  class="nav-item nav-link">MENU</a></li>
-                    <li><a routerLink="/panier" class="nav-item nav-link">PANIER</a></li>
-                    <li><a routerLink="/accueil" class="nav-item nav-link ">MON-COMPTE</a></li>
-                    <li><a routerLink="/accueil" class="nav-item nav-link " ngIF="id===administrateur">LISTE-EMPLOYER</a></li>
+                    <li routerLink="active" *ngIf="authService.hasroles('CLIENT')"><a routerLink="/menu"  class="nav-item nav-link">MENU</a></li>
+                    <li routerLink="active"  *ngIf="authService.hasroles('CLIENT')"><a routerLink="/panier" class="nav-item nav-link">PANIER</a> </li>
+                    <li routerLink="active"  *ngIf="authService.hasroles('CLIENT')"><a routerLink="/commande-client" class="nav-item nav-link " >MES-COMMANDES</a></li>
+
+                    <li routerLink="active"*ngIf="authService.hasroles('SERVEUR')"><a routerLink="/liste-commande-serveur"  class="nav-item nav-link">LISTE-COMMANDES</a></li>
+                    <li routerLink="active"*ngIf="authService.hasroles('SERVEUR')"><a routerLink="/commande-prete" class="nav-item nav-link">COMMANDES-PRETES</a> </li>
+                    <li><a routerLink="/dashboard"  class="nav-item nav-link" *ngIf="authService.hasroles('ADMINISTRATEUR')">TABLEAU-BORD</a></li>
+                    <li><a routerLink="/ajout-employer" class="nav-item nav-link" *ngIf="authService.hasroles('ADMINISTRATEUR')">AJOUT-EMPLOYER</a></li>
+                    <li><a routerLink="/ajout-produit" class="nav-item nav-link" *ngIf="authService.hasroles('ADMINISTRATEUR')">AJOUT-PLAT</a></li>
+                    <li><a routerLink="/liste-employer" class="nav-item nav-link containder-fluid" *ngIf="authService.hasroles('ADMINISTRATEUR')">LISTE-EMPLOYER</a></li>
+                    <li><a routerLink="/liste-commande"  class="nav-item nav-link" *ngIf="authService.hasroles('LIVREUR')">LISTE-COMMANDES</a></li>
+                    <li><a routerLink="/mes-livraisons" class="nav-item nav-link containder-fluid" *ngIf="authService.hasroles('LIVREUR')">MES-LIVRAISONS</a></li>
+                    <li><a routerLink="/accueil" class="nav-item nav-link containder-fluid" *ngIf="authService.hasroles('LIVREUR')">MON-PROFIL</a></li>
+                    <li routerLink="active"  ><a routerLink="/accueil" class="nav-item nav-link ">MON-PROFILE</a></li>
+                    <li routerLink="active" ><a routerLink="/connexion" class="nav-link ">CONNECTEZ-VOUS</a></li>
+                    <li>
+                        <a class="btn nav-link"></a>
+                        <i class="bi bi-box-arrow-right"></i></li>
+                      <!--<li *ngIf="authservice.hasRole('ADMIN')"><a routerLink="/liste-employer" class="nav-item nav-link containder-fluid">LISTE-EMPLOYER</a></li>-->
                 </ul>
             </div>
         </div>
