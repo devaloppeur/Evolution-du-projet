@@ -24,6 +24,7 @@ import { RouterModule } from '@angular/router';
 import { PanierComponent } from './pages/administrateur/Panier/panier/panier.component';
 import { UtilisateurComponent } from './pages/page_utilisateur/utilisateur/utilisateur.component';
 import { NouvelUtilisateurComponent } from './pages/page_utilisateur/nouvel-utilisateur/nouvel-utilisateur.component';
+import { NouvelUserComponent } from './pages/utilisateurs/nouvel-user/nouvel-user.component';
 import { MesLivraisonsComponent } from './pages/livreur/mes-livraisons/mes-livraisons.component';
 
 import { ClientComponent } from './pages/page_client/client.component';
@@ -37,6 +38,27 @@ import { ListeCommandeServeurComponent } from './pages/serveur/liste-commande-se
 import { CommandePreteComponent } from './pages/serveur/commande-prete/commande-prete.component';
 import { CommandeClientComponent } from './pages/client/commande-client/commande-client.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PageDashboardComponent } from './pages/page-dashboard/page-dashboard.component';
+import { MenuVraiComponent } from './component/menu-vrai/menu-vrai.component';
+import { PageStatistiquesComponent } from './pages/page-statistiques/page-statistiques.component';
+import { SearchBarComponent } from './component/layout/search-bar/search-bar.component';
+import { PageArticleComponent } from './pages/articles/page-article/page-article.component';
+import { DetailArticleComponent } from './component/detail-article/detail-article.component';
+import { NouvelArtcleComponent } from './pages/articles/nouvel-artcle/nouvel-artcle.component';
+import { DetailClientComponent } from './component/detail-client/detail-client.component';
+import { PageClientComponent } from './pages/clientvrai/page-client/page-client.component';
+import { NouveauClientComponent } from './pages/clientvrai/nouveau-client/nouveau-client.component';
+import { DetailCmdCltComponent } from './component/detail-cmd-clt/detail-cmd-clt.component';
+import { DetailCmdComponent } from './component/detail-cmd/detail-cmd.component';
+import { PageCmdCltComponent } from './pages/cmd-client/page-cmd-clt/page-cmd-clt.component';
+import { BouttonActionComponent } from './component/boutton-action/boutton-action.component';
+import { NouvelleCmdCltComponent } from './pages/cmd-client/nouvelle-cmd-clt/nouvelle-cmd-clt.component';
+import { PageCategoriesComponent } from './pages/categories/page-categories/page-categories.component';
+import { NouvelleCategorieComponent } from './pages/categories/nouvelle-categorie/nouvelle-categorie.component';
+import { PageUtilisateurComponent } from './pages/utilisateurs/page-utilisateur/page-utilisateur.component';
+import { DetailUtilisateurComponent } from './component/detail-utilisateur/detail-utilisateur.component';
+import { PageProfilComponent } from './pages/profil/page-profil/page-profil.component';
+import { ChangerMotDePasseComponent } from './pages/profil/changer-mot-de-passe/changer-mot-de-passe.component';
 
 
 // import { MenuTrueComponent } from './menu_true/menu_true.component';
@@ -60,16 +82,17 @@ import { ReactiveFormsModule } from '@angular/forms';
     BoissonComponent,
     FooterComponent,
     ListeCommandeComponent,
-    
+
     ListeEmployerComponent,
     GestionLivreurComponent,
     GestionServeurComponent,
-  
+
     PageConnexionComponent,
     UtilisateurComponent,
     NouvelUtilisateurComponent,
+    NouvelUserComponent,
     MesLivraisonsComponent,
-  
+
     ClientComponent,
     NouvelClientComponent,
     LivreurComponent,
@@ -80,7 +103,28 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListeCommandeServeurComponent,
     CommandePreteComponent,
     CommandeClientComponent,
- 
+    PageDashboardComponent,
+    MenuVraiComponent,
+    PageStatistiquesComponent,
+    SearchBarComponent,
+    PageArticleComponent,
+    DetailArticleComponent,
+    NouvelArtcleComponent,
+    DetailClientComponent,
+    PageClientComponent,
+    NouveauClientComponent,
+    DetailCmdCltComponent,
+    DetailCmdComponent,
+    PageCmdCltComponent,
+    BouttonActionComponent,
+    NouvelleCmdCltComponent,
+    PageCategoriesComponent,
+    NouvelleCategorieComponent,
+    PageUtilisateurComponent,
+    DetailUtilisateurComponent,
+    PageProfilComponent,
+    ChangerMotDePasseComponent,
+
   ],
   imports: [
     BrowserModule,

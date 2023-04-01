@@ -24,8 +24,92 @@ import { NouvelClientComponent } from './pages/page_client/nouvel-client/nouvel-
 import { CommandePreteComponent } from './pages/serveur/commande-prete/commande-prete.component';
 import { CommandeClientComponent } from './pages/client/commande-client/commande-client.component';
 import { AuthenticationGuard } from './pages/administrateur/guards/authentication.guard';
+import { PageDashboardComponent } from './pages/page-dashboard/page-dashboard.component';
+import { PageStatistiquesComponent } from './pages/page-statistiques/page-statistiques.component';
+import { PageArticleComponent } from './pages/articles/page-article/page-article.component';
+import { NouvelArtcleComponent } from './pages/articles/nouvel-artcle/nouvel-artcle.component';
+import { PageClientComponent } from './pages/clientvrai/page-client/page-client.component';
+import { NouveauClientComponent } from './pages/clientvrai/nouveau-client/nouveau-client.component';
+import { PageCmdCltComponent } from './pages/cmd-client/page-cmd-clt/page-cmd-clt.component';
+import { NouvelleCmdCltComponent } from './pages/cmd-client/nouvelle-cmd-clt/nouvelle-cmd-clt.component';
+import { PageCategoriesComponent } from './pages/categories/page-categories/page-categories.component';
+import { NouvelleCategorieComponent } from './pages/categories/nouvelle-categorie/nouvelle-categorie.component';
+import { PageUtilisateurComponent } from './pages/utilisateurs/page-utilisateur/page-utilisateur.component';
+import { NouvelUserComponent } from './pages/utilisateurs/nouvel-user/nouvel-user.component';
+import { PageProfilComponent } from './pages/profil/page-profil/page-profil.component';
+import { ChangerMotDePasseComponent } from './pages/profil/changer-mot-de-passe/changer-mot-de-passe.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: PageDashboardComponent
+  },
+
+  {
+    path: '',
+    component: PageDashboardComponent,
+    children: [
+      {
+        path: 'statisques',
+        component: PageStatistiquesComponent
+      },
+      {
+        path: 'articles',
+        component: PageArticleComponent
+      },
+      {
+        path: 'nouvelarticle',
+        component: NouvelArtcleComponent
+      },
+      {
+        path: 'clients',
+        component: PageClientComponent
+      },
+      {
+        path: 'nouveauclient',
+        component: NouveauClientComponent
+      },
+      {
+        path: 'cmd',
+        component: PageCmdCltComponent
+      },
+      {
+        path: 'nouvellecommande',
+        component: NouvelleCmdCltComponent
+      },
+      {
+        path: 'categories',
+        component: PageCategoriesComponent
+      },
+      {
+        path: 'nouvellecategorie',
+        component: NouvelleCategorieComponent
+      },
+      {
+        path: 'user',
+        component: PageUtilisateurComponent
+      },
+      {
+        path: 'nouveluser',
+        component: NouvelUserComponent
+      },
+      {
+        path: 'profil',
+        component: PageProfilComponent
+      },
+      {
+        path: 'changermotdepasse',
+        component: ChangerMotDePasseComponent
+
+      }
+      // {path:'', component:PageConnexionComponent},
+    ]
+
+  },
+  {
+    path:'connexion',
+    component:PageConnexionComponent
+  },
   {path: 'panier', component: PanierComponent},
   {path: 'menu', component: MenuComponent},
     {path: 'entrees',component : EntreesComponent},
@@ -36,14 +120,14 @@ const routes: Routes = [
    {path: 'parametre-compte',component : ParametreCompteComponent},
    {path: 'commande-client', component:CommandeClientComponent},
 
- 
+
   {path:'dashboard', component:DashboardComponent , canActivate :[AuthenticationGuard],
 children:[
   {path:'ajout-employer', component:AjoutEmployeComponent},
   {path:'ajout-produit', component:AjoutProduitComponent},
   {path:'liste-employer', component:ListeEmployerComponent},
 ]},
- 
+
   {path:'gestion-livreur', component:GestionLivreurComponent,canActivate :[AuthenticationGuard],
   children:[
     {path:'mes-livraisons', component:MesLivraisonsComponent},
@@ -53,19 +137,18 @@ children:[
   children:[
     {path: 'commande-prete', component:CommandePreteComponent},
 ]},
- 
-  {path:'connexion', component:PageConnexionComponent},
-  {path:'', component:PageConnexionComponent},
-  
+
+
+
   {path:'nouvel-utilisateur', component:NouvelUtilisateurComponent},
   {path:'utilisateur', component: UtilisateurComponent},
   {path:'client', component:ClientComponent},
   {path: 'nouveau-client', component:NouvelClientComponent},
- 
- 
 
-  
-  
+
+
+
+
 ];
 
 @NgModule({

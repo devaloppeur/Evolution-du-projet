@@ -1,0 +1,109 @@
+<!-- la div de toute la page -->
+<div class="col mb-3">
+
+  <!-- La div pour que tous les composants ne se collent pas aux bordurees de la page -->
+  <div class="col-md-12">
+  <!-- La div du titre -->
+  <div class="col-md-12 mb-3 mt-5">
+    <h2>Nouvelle commande</h2>
+  </div>
+
+  <!-- La div des informations globales sur la commande -->
+  <div class="row col p-3 customer-border">
+
+    <!-- Formulaire à remplir pour la commande -->
+    <div class="col-md-6 border-right">
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control"  placeholder="Code commande">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Date commande">
+        </div>
+        <div class="form-group">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Selectionner un client</option>
+            <option value="1">Boissons</option>
+            <option value="2">desert </option>
+            <option value="3">Plats</option>
+          </select>
+        </div>
+      </form>
+    </div>
+
+    <!-- Details info client et commande -->
+    <div class="col-md-6">
+      <div class="col">
+        <div class="row">
+          <div>Nom</div>
+        </div>
+        <div class="row">
+          <div>Prenom</div>
+        </div>
+        <div class="row">
+          <div>Telephone</div>
+        </div>
+        <div class="row">
+          <div>Statut commande</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- La div des ajouts des lignes de commande -->
+
+    <div class="row col mt-2 p-3 customer-border">
+      <form>
+        <div class="form-row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Code article">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Quantite">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Prix unitaire">
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-success">+</button>
+          </div>
+      </div>
+      </form>
+    </div>
+
+    <!-- La div qui recupere les lignes de commande ajoutes au fur et à mesure -->
+    <div class="row col mt-2 p-3 customer-border" style="max-height: 300px; overflow-y: scroll;">
+      <app-detail-cmd></app-detail-cmd>
+      <app-detail-cmd></app-detail-cmd>
+      <app-detail-cmd></app-detail-cmd>
+      <app-detail-cmd></app-detail-cmd>
+      <app-detail-cmd></app-detail-cmd>
+      <app-detail-cmd></app-detail-cmd>
+      <app-detail-cmd></app-detail-cmd>
+      <app-detail-cmd></app-detail-cmd>
+      <app-detail-cmd></app-detail-cmd>
+      <app-detail-cmd></app-detail-cmd>
+      <app-detail-cmd></app-detail-cmd>
+      <app-detail-cmd></app-detail-cmd>
+    </div>
+
+    <div class="row col mt-2 p-3 text-right customer-border">
+      <h3>Total de la commande: total</h3>
+    </div>
+
+  <!-- Bouton action -->
+
+  <div class="col-md-12 text-right mt-2 mb-3">
+    <button type="button" class="btn btn-danger" (click)="cancelClick()">
+      <i class="fa fa-ban" aria-hidden="true"></i>&nbsp;
+      Annuler
+    </button>
+    <button type="button" class="btn btn-primary ml-2">
+      <i class="fa fa-save" aria-hidden="true"></i>&nbsp;
+      Enregistrer
+    </button>
+  </div>
+</div>
+</div>

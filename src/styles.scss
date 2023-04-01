@@ -1,14 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-    background: linear-gradient(30deg,rgb(119, 100, 100), beige);
+    // background: linear-gradient(30deg,rgb(119, 100, 100), beige);
+
+    background-color: #eff2f5 !important;
 }
 
-
-
-
-.border-noe{
-    border:none !important;
+.background-grey{
+  background-color: #eff2f5 !important;
 }
+
+.border-none{
+  border: none !important;
+}
+
 .min-height-80{
-min-height:80px; 
+  min-height: 80px;
 }
+
+.border-right {
+  border-right: 2px  solid #9ca1a6 !important;
+}
+
+.customer-border{
+  border: solid #9ca1a6;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+

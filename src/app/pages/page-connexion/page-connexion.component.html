@@ -1,43 +1,58 @@
-<
 
-        <div >
-          <div >
-              <div class="container" id="form" >
-                <div><p>CONNEXION<p></p></div>
-                <div class="text-danger " *ngIf="errorMessage">{{errorMessage}}</div>
-            
-                <div class="card-body">
-          <form [formGroup]="userFormGroup" (ngSubmit)="handleLogin()"> 
-                <div >
-                  <div >
-                    <input   type="text"  formControlName="username" class="formControl" placeholder="Nom d'utilisateur" id="elt">
-                 </div>
-                <div >
-                  <input type="password" formControlName="password"  class="formControl" placeholder="Mot de passe" id="elt" >
+              <div class="container my-container">
+                <div class="card-header text-center" style="color: blue;">
+                  <h3 class="text-center mb-3">
+                    CONNEXION
+                  </h3>
                 </div>
-                <div >
-                  
-                  <button type="submit" class="btn btn-danger"   id="connex">Se connecter</button>
-                 </div>
-              
+                <div class="card shadow-lg justify-content-md-center">
+                  <!-- Message d'erreur lors d'une MAUVAISE TENTATIVE DE CONNEXION -->
+                  <div class="text-danger" *ngIf="errorMessage">
+                  {{errorMessage}}
+                  </div>
+                  <!-- Le corps de la l'interface de connexion -->
+                  <div class="card-body">
+                    <div class="mb-3">
+                      <input type="text" class="form-control" placeholder="username">
+                    </div>
+                    <div class="mb-3">
+                      <input type="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="d-flex justify-content-between">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Se souvenir
+                        </label>
+                      </div>
+                      <div>
+                        <button type="button" class="btn btn-primary">
+                          <i class="fa fa-check"></i>
+                          Se connecter
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-                 <li>
-                    <input type ="checkbox" value="" aria-label="...">
-                    Garder la session ouverte
-                  </li>
-            </div>
-        </form>
-                
-                
-        <!--ombres-->
-        <div class="drop drop-1"></div>
-        <div class="drop drop-2"></div>
-        <div class="drop drop-3"></div>
-        <div class="drop drop-4"></div>
-        <div class="drop drop-5"></div> 
-              
-      </div>
 
- 
 
-   
+ <!-- <form [formGroup]="userFormGroup" (ngSubmit)="handleLogin()">
+                    <div >
+                      <div >
+                        <input   type="text"  formControlName="username" class="formControl" placeholder="Nom d'utilisateur" id="elt">
+                      </div>
+                      <div >
+                        <input type="password" formControlName="password"  class="formControl" placeholder="Mot de passe" id="elt" >
+                      </div>
+                      <div >
+                        <button type="submit" class="btn btn-danger"   id="connex">Se connecter</button>
+                      </div>
+
+                      <li>
+                        <input type ="checkbox" value="" aria-label="...">
+                          Garder la session ouverte
+                      </li>
+                    </div>
+                  </form> -->

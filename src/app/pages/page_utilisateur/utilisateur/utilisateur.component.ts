@@ -17,6 +17,6 @@ export class UtilisateurComponent implements OnInit {
   }
   NouvelUtilisateurNavigate(){
     this.router.navigate(['/nouvel-utilisateur']);
- 
+
   }
 }
