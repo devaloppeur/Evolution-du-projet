@@ -1,5 +1,5 @@
 
-<header class="containder-fluid header-area overlay " id="header">
+<header class="containder-fluid header-area overlay">
     <nav class=" container-fluid navbar navbar-expand-md navbar-dark  navbar-fixed-top" id="menu">
         <div class="container-fluid">
             <a href="#" class="navbar-brand" id="kiff">SAVEUR-CELESTE</a>
@@ -19,7 +19,7 @@
 
                     <li routerLink="active"*ngIf="authService.hasroles('SERVEUR')"><a routerLink="/liste-commande-serveur"  class="nav-item nav-link">LISTE-COMMANDES</a></li>
                     <li routerLink="active"*ngIf="authService.hasroles('SERVEUR')"><a routerLink="/commande-prete" class="nav-item nav-link">COMMANDES-PRETES</a> </li>
-                    <li><a routerLink="/dashboard"  class="nav-item nav-link" *ngIf="authService.hasroles('ADMINISTRATEUR')">TABLEAU-BORD</a></li>
+                    <!-- <li><a routerLink="/dashboard"  class="nav-item nav-link" *ngIf="authService.hasroles('ADMINISTRATEUR')">TABLEAU-BORD</a></li> -->
                     <li><a routerLink="/ajout-employer" class="nav-item nav-link" *ngIf="authService.hasroles('ADMINISTRATEUR')">AJOUT-EMPLOYER</a></li>
                     <li><a routerLink="/ajout-produit" class="nav-item nav-link" *ngIf="authService.hasroles('ADMINISTRATEUR')">AJOUT-PLAT</a></li>
                     <li><a routerLink="/liste-employer" class="nav-item nav-link containder-fluid" *ngIf="authService.hasroles('ADMINISTRATEUR')">LISTE-EMPLOYER</a></li>

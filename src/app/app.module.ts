@@ -130,7 +130,6 @@ import { ChangerMotDePasseComponent } from './pages/profil/changer-mot-de-passe/
     BrowserModule,
     AppRoutingModule,
     LazyLoadImageModule,
-    FormsModule,
     ReactiveFormsModule,
         RouterModule.forRoot([
       {path:'ajout-administrateur/', component:AjoutAdminComponent},

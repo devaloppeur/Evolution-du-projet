@@ -110,6 +110,7 @@ const routes: Routes = [
     ]
 
   },
+
   {path: 'panier', component: PanierComponent},
   {path: 'menu', component: MenuComponent},
     {path: 'entrees',component : EntreesComponent},
