@@ -41,12 +41,16 @@ import { ChangerMotDePasseComponent } from './pages/profil/changer-mot-de-passe/
 
 const routes: Routes = [
   {
-    path: '',
-    component: PageDashboardComponent
+    path:'',
+    component:PageConnexionComponent
   },
+  // {
+  //   path: '',
+  //   component: PageDashboardComponent
+  // },
 
   {
-    path: '',
+    path: 'dashboard',
     component: PageDashboardComponent,
     children: [
       {
@@ -106,10 +110,6 @@ const routes: Routes = [
     ]
 
   },
-  {
-    path:'connexion',
-    component:PageConnexionComponent
-  },
   {path: 'panier', component: PanierComponent},
   {path: 'menu', component: MenuComponent},
     {path: 'entrees',component : EntreesComponent},
@@ -121,12 +121,12 @@ const routes: Routes = [
    {path: 'commande-client', component:CommandeClientComponent},
 
 
-  {path:'dashboard', component:DashboardComponent , canActivate :[AuthenticationGuard],
-children:[
-  {path:'ajout-employer', component:AjoutEmployeComponent},
-  {path:'ajout-produit', component:AjoutProduitComponent},
-  {path:'liste-employer', component:ListeEmployerComponent},
-]},
+//   {path:'dashboard', component:DashboardComponent , canActivate :[AuthenticationGuard],
+// children:[
+//   {path:'ajout-employer', component:AjoutEmployeComponent},
+//   {path:'ajout-produit', component:AjoutProduitComponent},
+//   {path:'liste-employer', component:ListeEmployerComponent},
+// ]},
 
   {path:'gestion-livreur', component:GestionLivreurComponent,canActivate :[AuthenticationGuard],
   children:[

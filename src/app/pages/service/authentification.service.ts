@@ -11,22 +11,31 @@ export class AuthentificationService {
   authenticatedUser:AppUser | undefined;
 
   constructor() {
-    this.users.push({userId: UUID.UUID(), username:"user1", password:"cccc", roles:["USER","CLIENT"]})
-    this.users.push({userId : UUID.UUID(), username:"serveur", password:"ssss", roles:["USER","SERVEUR"]})
-    this.users.push({userId : UUID.UUID(), username:"livreur", password:"llll", roles:["USER","LIVREUR"]})
+    this.users.push({userId: UUID.UUID(), username:"user", password:"user", roles:["USER","CLIENT"]})
+    // this.users.push({userId : UUID.UUID(), username:"serveur", password:"ssss", roles:["USER","SERVEUR"]})
+    // this.users.push({userId : UUID.UUID(), username:"livreur", password:"llll", roles:["USER","LIVREUR"]})
     this.users.push({userId : UUID.UUID(), username:"admin", password:"aaaa", roles:["USER","ADMINISTRATEUR"]})
    }
 
+
+
 public login( username: string, password: string):Observable<AppUser>{
 
+  // Ici on envoie une requete vers notre back qui est le local
 let appUser= this.users.find(u => u.username==username);
-if(!appUser) return throwError( ()=>new Error("Utilisateur inexistant"));
+
+// On fait les tests
+if(!appUser) {
+  return throwError( ()=>new Error("Utilisateur inexistant"));
+}
 if(appUser.password != password){
   return throwError(()=>new Error("Mauvais mot de passe"));
 }
 return of(appUser);
-  
+
 }
+
+
 
 public authenticateUser(appUser:AppUser):Observable<boolean>{
   this.authenticatedUser =appUser;

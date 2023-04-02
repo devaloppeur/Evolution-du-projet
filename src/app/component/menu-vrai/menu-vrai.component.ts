@@ -108,7 +108,7 @@ export class MenuVraiComponent implements OnInit {
 private lastSelectMenu: Menu | undefined;
 
   constructor(
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit(): void {

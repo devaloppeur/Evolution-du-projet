@@ -37,7 +37,7 @@ import { NouveauServeurComponent } from './pages/page_serveur/nouveau-serveur/no
 import { ListeCommandeServeurComponent } from './pages/serveur/liste-commande-serveur/liste-commande-serveur.component';
 import { CommandePreteComponent } from './pages/serveur/commande-prete/commande-prete.component';
 import { CommandeClientComponent } from './pages/client/commande-client/commande-client.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageDashboardComponent } from './pages/page-dashboard/page-dashboard.component';
 import { MenuVraiComponent } from './component/menu-vrai/menu-vrai.component';
 import { PageStatistiquesComponent } from './pages/page-statistiques/page-statistiques.component';
@@ -130,6 +130,7 @@ import { ChangerMotDePasseComponent } from './pages/profil/changer-mot-de-passe/
     BrowserModule,
     AppRoutingModule,
     LazyLoadImageModule,
+    FormsModule,
     ReactiveFormsModule,
         RouterModule.forRoot([
       {path:'ajout-administrateur/', component:AjoutAdminComponent},
