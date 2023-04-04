@@ -41,7 +41,7 @@ handleLogin(){
       this.authService.authenticateUser(appUser).subscribe( {
          next:(data)=>{
 
-      this.router.navigateByUrl("/dashboard")
+      this.router.navigateByUrl("dashboard")
          }
 
 

@@ -27,22 +27,41 @@
         <a class="nav-link disabled">Link</a>
       </li>
     </ul>
-    <!-- <form class="d-flex">
-      <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form> -->
-    <!-- <li>
-      {{authService.authenticatedUser!.username}}
-    </li> -->
-   <a href="javascript()void(0);" [routerLink]="['/profil']">
-    <img src="assets/images/avatar.png" width="70px" height="70">
-   </a>
+
+    <ul class="navbar-nav">
+      <li>
+        <a href="javascript()void(0);" [routerLink]="['dashboard/profil']">
+        <!-- <img src="assets/images/avatar.png" width="70px" height="70"> -->
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="">
+          {{authService.authenticatedUser!.username}}
+
+        </a>
+      </li>
+
+      <li>
+        <a class="btn nav-link" (click)="handleLogout()">
+          <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+
+        </a>
+      </li>
+    </ul>
 
   </div>
 </nav>
 
+
+
+
+
+
+
 <div class="main-container">
   <div class="row min-height-600 no-flex-wrap">
+
+
     <!-- Menu ou side bar -->
     <div class="card col-md-2 mr-2">
       <div class="col pl-0 pr-0">
@@ -54,23 +73,33 @@
         </div>
       </div>
     </div>
+
+
+
     <!-- Content -->
-    <div class="card col-md-10 pl-0 pr-0 background-grey border-none d-flex flex-column justify-content-between">
+    <div class="card col-md-10 pl-0 pr-0 background-grey border-none">
       <!-- Alignement en colonne des 3 element du content -->
-      <div class="col pl-0 pr-0">
+      <div class="col pl-0 pr-0 d-flex flex-column justify-content-between">
+
+
         <!-- Le header -->
         <div class="card min-height-80">
           <app-search-bar></app-search-bar>
         </div>
-        <!-- Main container -->
-        <div class="card mb-2" style="min-height: 480px">
 
+
+        <!-- Main container -->
+        <div class="card mb-2" style="min-height: 850px">
           <router-outlet></router-outlet>
         </div>
+
+
         <!-- Le footer -->
         <div class="card min-height-80">
           footer
         </div>
+
+
       </div>
     </div>
   </div>

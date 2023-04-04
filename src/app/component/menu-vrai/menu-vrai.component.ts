@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Menu } from './menu-vrai';
 import { Router } from '@angular/router';
+import { AuthentificationService } from 'src/app/pages/service/authentification.service';
 
 @Component({
   selector: 'app-menu-vrai',
@@ -26,7 +27,7 @@ export class MenuVraiComponent implements OnInit {
         id: '02',
         titre: 'Statisques',
         icon: 'fa fa-bar-chart-line-fill',
-        url:'statisques'
+        url:'/dashboard/statisques'
       }
     ]
       },
@@ -42,19 +43,11 @@ export class MenuVraiComponent implements OnInit {
             id: '11',
           titre: 'Article',
           icon: 'bi bi-boxes',
-          url: 'articles',
+          url: '/dashboard/articles'
           }
-          /* {
-            id: '12',
-            titre: 'Mouvements du stock',
-            icon: 'bi bi-stack-overflow',
-            url: 'mvtstk',
-          } */
         ]
 
       },
-
-
 
 
       {
@@ -67,13 +60,13 @@ export class MenuVraiComponent implements OnInit {
             id: '21',
           titre: 'Clients',
           icon: 'bi bi-people',
-          url: 'clients',
+          url: '/dashboard/clients',
           },
           {
             id: '22',
             titre: 'Commandes clients',
             icon: 'fa fa-cart4',
-            url: 'cmd',
+            url: '/dashboard/cmd',
           }
         ]
 
@@ -92,13 +85,13 @@ export class MenuVraiComponent implements OnInit {
             id: '31',
           titre: 'Categories',
           icon: 'fa fa-tools',
-          url: 'categories',
+          url: '/dashboard/categories',
           },
           {
             id: '32',
             titre: 'Utilisateurs',
             icon: 'fa fa-users-cog',
-            url: 'user',
+            url: '/dashboard/user',
           }
         ]
       }
@@ -108,7 +101,7 @@ export class MenuVraiComponent implements OnInit {
 private lastSelectMenu: Menu | undefined;
 
   constructor(
-    private router: Router,
+    private router: Router, public authService: AuthentificationService
   ) { }
 
   ngOnInit(): void {

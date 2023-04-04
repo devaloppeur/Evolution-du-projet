@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthentificationService } from '../service/authentification.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-dashboard',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService: AuthentificationService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  handleLogout() {
+    this.authService.logout().subscribe({
+      next: (data) => {
+        this.router.navigate(["/"]);
+      }
+    })
   }
 
 }

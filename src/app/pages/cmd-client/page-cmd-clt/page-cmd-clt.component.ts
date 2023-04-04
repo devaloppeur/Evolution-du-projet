@@ -17,7 +17,7 @@ export class PageCmdCltComponent implements OnInit {
 
   nouvelleCommande(): void {
 
-    this.router.navigate(['nouvellecommande']);
+    this.router.navigate(['dashboard/nouvellecommande']);
   }
 
 }

@@ -1,7 +1,7 @@
 <div class="row mb-1 mr-0 customer-border">
 
   <!-- Details article -->
-  <div class="col-md-4 border-right mt-1 mb-1">
+  <!-- <div class="col-md-4 border-right mt-1 mb-1">
     <div class="col">
       <div class="row">
         <div>Code article</div>
@@ -13,11 +13,11 @@
         <div>Designation</div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
   <!-- Details categorie -->
-  <div class="col-md-3 border-right  mb-1 mt-1">
+  <!-- <div class="col-md-3 border-right  mb-1 mt-1">
     <div class="col">
       <div class="row">
         Code categorie
@@ -26,29 +26,69 @@
         Designation categorie
       </div>
     </div>
-  </div>
+  </div> -->
 
 
 
 
 
   <!-- Boutons action -->
-  <div class="col-md-3 mb-1 mt-1">
+  <!-- <div class="col-md-3 mb-1 mt-1">
 
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3" *ngIf="authService.hasroles('ADMIN')">
         <button type="button" class="btn btn-link">
           <i class="fas fa-pencil-fill"></i>&nbsp;Modifier
         </button>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3" *ngIf="authService.hasroles('ADMIN')">
         <button type="button" class="btn btn-link">Supprimer</button>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3" *ngIf="authService.hasroles('ADMIN')">
         <button type="button" class="btn btn-link">Details</button>
+      </div>
+      <div class="col-md-3">
+        <button type="button" class="btn btn-link">Commander</button>
       </div>
 
     </div>
+  </div> -->
+
+
+  <ng-template #errors>
+    <div class="text-danger">
+      {{errorMessage}}
+    </div>
+  </ng-template>
+
+
+  <div class="card-body" *ngIf="articles; else errors">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Codearticle</th> <th>Designation</th> <th>Categorie</th>  <th>Prix</th> <th></th> <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let article of articles">
+          <td>{{article.code}}</td>
+          <td>{{article.designation}}</td>
+          <td>{{article.categorie}}</td>
+          <td>{{article.prix}}</td>
+          <td *ngIf="authService.hasroles('ADMIN')">
+            <button (click)="handleDeleteArticle(article)" type="button" class="btn btn-danger">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+          </td>
+          <td *ngIf="authService.hasroles('ADMIN')">
+            <button (click)="handleEditArticle(article)" type="button" class="btn btn-success">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
   </div>
 
 

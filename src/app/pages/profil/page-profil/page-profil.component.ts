@@ -16,7 +16,7 @@ export class PageProfilComponent implements OnInit {
   }
 
   modifierMotDePasse(): void {
-    this.router.navigate(['changermotdepasse']);
+    this.router.navigate(['dashboard/changermotdepasse']);
   }
 
 }

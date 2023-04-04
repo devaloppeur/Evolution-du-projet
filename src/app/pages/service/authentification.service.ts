@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AppUser } from '../model/user.model';
-import { Observable,  of, throwError } from 'rxjs';
+import { ReplaySubject, Observable,  of, throwError } from 'rxjs';
 import {UUID} from "angular2-uuid";
 
 @Injectable({
@@ -9,12 +9,13 @@ import {UUID} from "angular2-uuid";
 export class AuthentificationService {
   users: AppUser[]=[];
   authenticatedUser:AppUser | undefined;
+  private authenticationState = new ReplaySubject<AppUser | null>(1);
 
   constructor() {
-    this.users.push({userId: UUID.UUID(), username:"user", password:"user", roles:["USER","CLIENT"]})
+    this.users.push({userId: UUID.UUID(), username:"user", password:"user", roles:["USER"]})
     // this.users.push({userId : UUID.UUID(), username:"serveur", password:"ssss", roles:["USER","SERVEUR"]})
     // this.users.push({userId : UUID.UUID(), username:"livreur", password:"llll", roles:["USER","LIVREUR"]})
-    this.users.push({userId : UUID.UUID(), username:"admin", password:"aaaa", roles:["USER","ADMINISTRATEUR"]})
+    this.users.push({userId : UUID.UUID(), username:"admin", password:"admin", roles:["ADMIN"]})
    }
 
 
@@ -39,6 +40,7 @@ return of(appUser);
 
 public authenticateUser(appUser:AppUser):Observable<boolean>{
   this.authenticatedUser =appUser;
+  this.authenticationState.next(this.authenticatedUser);
   localStorage.setItem("authUser",JSON.stringify( {username: appUser.username, roles:appUser.roles , jwt:"JWT_TOKEN"}));
   return of(true);
 }
@@ -46,6 +48,10 @@ public authenticateUser(appUser:AppUser):Observable<boolean>{
 public hasroles(role:string):boolean{
  return this.authenticatedUser!.roles.includes(role)
 
+}
+
+getAuthenticationState(): Observable<AppUser | null> {
+  return this.authenticationState.asObservable();
 }
 
 public isAuthenticated(){
@@ -61,4 +67,15 @@ public logout(): Observable<boolean>{
   return of(true);
 
 }
+
+hasAnyAuthority(authorities: string[] | string | undefined): boolean {
+  if (!this.authenticatedUser || !this.authenticatedUser.roles) {
+    return false;
+  }
+  if (!Array.isArray(authorities)) {
+    authorities = [authorities ?? ''];
+  }
+  return this.authenticatedUser.roles.some((authority: string) => authorities?.includes(authority ?? ''));
+}
+
 }

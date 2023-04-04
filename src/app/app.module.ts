@@ -59,6 +59,8 @@ import { PageUtilisateurComponent } from './pages/utilisateurs/page-utilisateur/
 import { DetailUtilisateurComponent } from './component/detail-utilisateur/detail-utilisateur.component';
 import { PageProfilComponent } from './pages/profil/page-profil/page-profil.component';
 import { ChangerMotDePasseComponent } from './pages/profil/changer-mot-de-passe/changer-mot-de-passe.component';
+import { HasAnyAuthorityDirective } from './directive/app-authority.directive';
+import { EditArticleComponent } from './pages/articles/edit-article/edit-article.component';
 
 
 // import { MenuTrueComponent } from './menu_true/menu_true.component';
@@ -124,6 +126,8 @@ import { ChangerMotDePasseComponent } from './pages/profil/changer-mot-de-passe/
     DetailUtilisateurComponent,
     PageProfilComponent,
     ChangerMotDePasseComponent,
+    HasAnyAuthorityDirective,
+    EditArticleComponent,
 
   ],
   imports: [
@@ -139,7 +143,7 @@ import { ChangerMotDePasseComponent } from './pages/profil/changer-mot-de-passe/
       {path:'mes-livraisons', component:MesLivraisonsComponent}
     ])
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

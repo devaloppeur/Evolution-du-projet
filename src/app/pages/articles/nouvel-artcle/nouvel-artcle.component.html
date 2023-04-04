@@ -1,54 +1,68 @@
 <div class="col">
 
-  <div class="col-md-12 mb-3 mt-2">
+  <!-- <div class="col-md-12 mb-3 mt-2">
     <img src="assets/img/default-150x150.png" class="rounded-circle" alt="">
   </div>
-  <hr>
+  <hr> -->
 
   <!-- Titre -->
-  <div class="col-md-12">
+  <div class="col-md-12 mt-5">
     <h2>Nouvel article</h2>
   </div>
 
   <!-- Information sur l'aricle -->
   <div class="col-md-12 mt-5">
-    <form>
-      <div class="row">
-        <div class="col mb-3">
-          <input type="text" class="form-control" placeholder="Code article">
-        </div>
-        <div class="col mb-3">
-          <input type="text" class="form-control" placeholder="Designation">
+    <form [formGroup]="articleFormGroup" (ngSubmit)="handleAddArticle()">
+      <div class="col">
+        <!-- <div class="col mb-3">
+          <input type="text" class="form-control" formControlName="code" placeholder="Code article">
+          <small *ngIf="articleFormGroup.controls['code'].errors && articleFormGroup.controls['code'].touched" class="text-danger">
+            Code is required
+          </small>
+        </div> -->
+        <div class="row mb-3">
+          <input type="text" class="form-control" formControlName="designation" placeholder="Designation">
+          <small *ngIf="articleFormGroup.controls['designation'].errors && articleFormGroup.controls['designation'].touched" class="text-danger">
+            Designation is required
+          </small>
         </div>
       </div>
-        <div class="row">
-          <div class="col mb-3">
-            <input type="text" class="form-control" placeholder="Prix">
+        <div class="col">
+          <div class="row mb-3">
+            <input type="text" class="form-control" formControlName="prix" placeholder="Prix">
+            <small *ngIf="articleFormGroup.controls['prix'].errors && articleFormGroup.controls['prix'].touched" class="text-danger">
+              Prix is required
+            </small>
           </div>
-          <div class="col mb-3">
-            <select class="form-select" aria-label="Default select example">
+          <div class="row mb-3">
+            <select class="form-select" aria-label="Default select example" formControlName="categorie" placeholder="Prix">
               <option selected>Selectionner une categorie</option>
-              <option value="1">Boissons</option>
-              <option value="2">desert </option>
-              <option value="3">Plats</option>
+              <option value="Boissons">Boissons</option>
+              <option value="desert">desert </option>
+              <option value="Plats">Plats</option>
             </select>
+            <small *ngIf="articleFormGroup.controls['categorie'].errors && articleFormGroup.controls['categorie'].touched" class="text-danger">
+              Categorie is required
+            </small>
           </div>
         </div>
-    </form>
-  </div>
 
-
-  <!-- Bouton action -->
+        <!-- Bouton action -->
 
   <div class="col-md-12 text-right mb-3">
     <button type="button" class="btn btn-danger" (click)="cancelClick()">
       <i class="fa fa-ban" aria-hidden="true"></i>&nbsp;
       Annuler
     </button>
-    <button type="button" class="btn btn-primary ml-2" (click)="saveClick()">
+    <button [disabled]="articleFormGroup.invalid" type="submit" class="btn btn-primary ml-2">
       <i class="fa fa-save" aria-hidden="true"></i>&nbsp;
       Enregistrer
     </button>
   </div>
+    </form>
+  </div>
+
+
+
 
 </div>

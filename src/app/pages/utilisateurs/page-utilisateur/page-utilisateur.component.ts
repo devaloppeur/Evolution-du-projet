@@ -16,7 +16,7 @@ export class PageUtilisateurComponent implements OnInit {
   }
 
   nouvelUser(): void {
-    this.router.navigate(['nouveluser'])
+    this.router.navigate(['dashboard/nouveluser'])
   }
 
 }

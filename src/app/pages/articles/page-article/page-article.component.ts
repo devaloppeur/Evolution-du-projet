@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthentificationService } from '../../service/authentification.service';
 
 @Component({
   selector: 'app-page-article',
@@ -9,14 +10,14 @@ import { Router } from '@angular/router';
 export class PageArticleComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router, public authService: AuthentificationService
   ) { }
 
   ngOnInit(): void {
   }
 
   nouvelArticle(): void {
-    this.router.navigate(['nouvelarticle']);
+    this.router.navigate(['dashboard/nouvelarticle']);
   }
 
 }

@@ -1,0 +1,12 @@
+.main-container {
+  overflow-x: hidden;
+}
+
+.no-flex-wrap {
+  flex-wrap: inherit !important;
+}
+
+.min-height-600 {
+  min-height: 850px;
+  margin-top: 1%;
+}/*# sourceMappingURL=page-dashboard.component.css.map */

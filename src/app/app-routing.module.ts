@@ -38,28 +38,34 @@ import { PageUtilisateurComponent } from './pages/utilisateurs/page-utilisateur/
 import { NouvelUserComponent } from './pages/utilisateurs/nouvel-user/nouvel-user.component';
 import { PageProfilComponent } from './pages/profil/page-profil/page-profil.component';
 import { ChangerMotDePasseComponent } from './pages/profil/changer-mot-de-passe/changer-mot-de-passe.component';
+import { EditArticleComponent } from './pages/articles/edit-article/edit-article.component';
 
 const routes: Routes = [
+
   {
     path:'',
     component:PageConnexionComponent
   },
-  // {
-  //   path: '',
-  //   component: PageDashboardComponent
-  // },
-
   {
     path: 'dashboard',
     component: PageDashboardComponent,
+    canActivate: [AuthenticationGuard],
     children: [
-      {
-        path: 'statisques',
-        component: PageStatistiquesComponent
-      },
       {
         path: 'articles',
         component: PageArticleComponent
+      },
+      {
+        path: 'nouveauclient',
+        component: NouveauClientComponent
+      },
+      {
+        path: 'editarticle/:code',
+        component: EditArticleComponent
+      },
+      {
+        path: 'statisques',
+        component: PageStatistiquesComponent
       },
       {
         path: 'nouvelarticle',
@@ -68,10 +74,6 @@ const routes: Routes = [
       {
         path: 'clients',
         component: PageClientComponent
-      },
-      {
-        path: 'nouveauclient',
-        component: NouveauClientComponent
       },
       {
         path: 'cmd',
@@ -106,20 +108,24 @@ const routes: Routes = [
         component: ChangerMotDePasseComponent
 
       }
-      // {path:'', component:PageConnexionComponent},
     ]
-
   },
+  // {
+  //   path: 'nouvelarticle',
+  //   component: NouvelArtcleComponent
+  // },
 
-  {path: 'panier', component: PanierComponent},
-  {path: 'menu', component: MenuComponent},
-    {path: 'entrees',component : EntreesComponent},
-    {path:'repas', component: PlatsComponent},
-    {path:'boissons', component: BoissonComponent},
-    {path: 'bon-commande', component:BonCommandeComponent},
-    {path:'accueil',component: AccueilComponent},
-   {path: 'parametre-compte',component : ParametreCompteComponent},
-   {path: 'commande-client', component:CommandeClientComponent},
+
+
+  // {path: 'panier', component: PanierComponent},
+  // {path: 'menu', component: MenuComponent},
+  //   {path: 'entrees',component : EntreesComponent},
+  //   {path:'repas', component: PlatsComponent},
+  //   {path:'boissons', component: BoissonComponent},
+  //   {path: 'bon-commande', component:BonCommandeComponent},
+  //   {path:'accueil',component: AccueilComponent},
+  //  {path: 'parametre-compte',component : ParametreCompteComponent},
+  //  {path: 'commande-client', component:CommandeClientComponent},
 
 
 //   {path:'dashboard', component:DashboardComponent , canActivate :[AuthenticationGuard],
@@ -129,22 +135,22 @@ const routes: Routes = [
 //   {path:'liste-employer', component:ListeEmployerComponent},
 // ]},
 
-  {path:'gestion-livreur', component:GestionLivreurComponent,canActivate :[AuthenticationGuard],
-  children:[
-    {path:'mes-livraisons', component:MesLivraisonsComponent},
-    {path:'liste-commande', component: ListeCommandeComponent}
-]},
-  {path:'gestion-serveur', component:GestionServeurComponent,canActivate :[AuthenticationGuard],
-  children:[
-    {path: 'commande-prete', component:CommandePreteComponent},
-]},
+//   {path:'gestion-livreur', component:GestionLivreurComponent,canActivate :[AuthenticationGuard],
+//   children:[
+//     {path:'mes-livraisons', component:MesLivraisonsComponent},
+//     {path:'liste-commande', component: ListeCommandeComponent}
+// ]},
+//   {path:'gestion-serveur', component:GestionServeurComponent,canActivate :[AuthenticationGuard],
+//   children:[
+//     {path: 'commande-prete', component:CommandePreteComponent},
+// ]},
 
 
 
-  {path:'nouvel-utilisateur', component:NouvelUtilisateurComponent},
-  {path:'utilisateur', component: UtilisateurComponent},
-  {path:'client', component:ClientComponent},
-  {path: 'nouveau-client', component:NouvelClientComponent},
+//   {path:'nouvel-utilisateur', component:NouvelUtilisateurComponent},
+//   {path:'utilisateur', component: UtilisateurComponent},
+//   {path:'client', component:ClientComponent},
+//   {path: 'nouveau-client', component:NouvelClientComponent},
 
 
 
