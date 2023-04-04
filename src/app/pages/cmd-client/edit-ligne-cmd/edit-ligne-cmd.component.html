@@ -1,0 +1,87 @@
+<div class="col">
+
+  <!-- <div class="col-md-12 mb-3 mt-2">
+    <img src="assets/img/default-150x150.png" class="rounded-circle" alt="">
+  </div>
+  <hr> -->
+
+  <!-- Titre -->
+  <div class="col-md-12 mt-5">
+    <h2>Modifier client</h2>
+  </div>
+
+  <!-- Information sur l'aricle -->
+  <div class="col-md-12 mt-5">
+    <form [formGroup]="ligneCommandeFormGroup" (ngSubmit)="handleUpdateLigneCommande()">
+      <div class="col">
+        <div class="row mb-3">
+          <label class="form-label">ID</label>
+          <label class="form-label">{{ligneCommande.ID}}</label>
+        </div>
+        <div class="row mb-3">
+          <input type="text" class="form-control" formControlName="codearticle" placeholder="Codearticle">
+          <small *ngIf="ligneCommandeFormGroup.controls['codearticle'].errors && ligneCommandeFormGroup.controls['codearticle'].touched" class="text-danger">
+            Codearticle is required
+          </small>
+        </div>
+      </div>
+        <div class="col">
+          <div class="row mb-3">
+            <input type="text" class="form-control" formControlName="designation" placeholder="Designation">
+            <small *ngIf="ligneCommandeFormGroup.controls['designation'].errors && ligneCommandeFormGroup.controls['designation'].touched" class="text-danger">
+              Designation is required
+            </small>
+          </div>
+          <div class="row mb-3">
+            <div class="row mb-3">
+              <input type="text" class="form-control" formControlName="categorie" placeholder="Categorie">
+              <small *ngIf="ligneCommandeFormGroup.controls['categorie'].errors && ligneCommandeFormGroup.controls['categorie'].touched" class="text-danger">
+                Categorie is required
+              </small>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="row mb-3">
+              <input type="text" class="form-control" formControlName="quantite" placeholder="Quantite">
+              <small *ngIf="ligneCommandeFormGroup.controls['quantite'].errors && ligneCommandeFormGroup.controls['quantite'].touched" class="text-danger">
+                Quantite is required
+              </small>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="row mb-3">
+              <input type="text" class="form-control" formControlName="prixunitaire" placeholder="Prixunitaire">
+              <small *ngIf="ligneCommandeFormGroup.controls['prixunitaire'].errors && ligneCommandeFormGroup.controls['prixunitaire'].touched" class="text-danger">
+                Prixunitaire is required
+              </small>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="row mb-3">
+              <input type="text" class="form-control" formControlName="montanttotal" placeholder="Montanttotal">
+              <small *ngIf="ligneCommandeFormGroup.controls['montanttotal'].errors && ligneCommandeFormGroup.controls['montanttotal'].touched" class="text-danger">
+                Montanttotal is required
+              </small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bouton action -->
+
+  <div class="col-md-12 text-right mb-3">
+    <button type="button" class="btn btn-danger" (click)="cancelClick()">
+      <i class="fa fa-ban" aria-hidden="true"></i>&nbsp;
+      Annuler
+    </button>
+    <button [disabled]="ligneCommandeFormGroup.invalid" type="submit" class="btn btn-primary ml-2">
+      <i class="fa fa-save" aria-hidden="true"></i>&nbsp;
+      Enregistrer
+    </button>
+  </div>
+    </form>
+  </div>
+
+
+
+
+</div>

@@ -1,0 +1,87 @@
+<div class="col">
+
+  <!-- <div class="col-md-12 mb-3 mt-2">
+    <img src="assets/img/default-150x150.png" class="rounded-circle" alt="">
+  </div>
+  <hr> -->
+
+  <!-- Titre -->
+  <div class="col-md-12 mt-5">
+    <h2>Modifier client</h2>
+  </div>
+
+  <!-- Information sur l'aricle -->
+  <div class="col-md-12 mt-5">
+    <form [formGroup]="clientFormGroup" (ngSubmit)="handleUpdateClient()">
+      <div class="col">
+        <div class="row mb-3">
+          <label class="form-label">ID</label>
+          <label class="form-label">{{client.ID}}</label>
+        </div>
+        <div class="row mb-3">
+          <input type="text" class="form-control" formControlName="nom" placeholder="Nom">
+          <small *ngIf="clientFormGroup.controls['nom'].errors && clientFormGroup.controls['nom'].touched" class="text-danger">
+            Nom is required
+          </small>
+        </div>
+      </div>
+        <div class="col">
+          <div class="row mb-3">
+            <input type="text" class="form-control" formControlName="prenom" placeholder="Prenom">
+            <small *ngIf="clientFormGroup.controls['prenom'].errors && clientFormGroup.controls['prenom'].touched" class="text-danger">
+              Prenom is required
+            </small>
+          </div>
+          <div class="row mb-3">
+            <div class="row mb-3">
+              <input type="text" class="form-control" formControlName="telephone" placeholder="Telephone">
+              <small *ngIf="clientFormGroup.controls['telephone'].errors && clientFormGroup.controls['telephone'].touched" class="text-danger">
+                Telephone is required
+              </small>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="row mb-3">
+              <input type="text" class="form-control" formControlName="adresse" placeholder="Adresse">
+              <small *ngIf="clientFormGroup.controls['adresse'].errors && clientFormGroup.controls['adresse'].touched" class="text-danger">
+                Adresse is required
+              </small>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="row mb-3">
+              <input type="text" class="form-control" formControlName="ville" placeholder="Ville">
+              <small *ngIf="clientFormGroup.controls['telephone'].errors && clientFormGroup.controls['telephone'].touched" class="text-danger">
+                Ville is required
+              </small>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="row mb-3">
+              <input type="text" class="form-control" formControlName="pays" placeholder="Pays">
+              <small *ngIf="clientFormGroup.controls['pays'].errors && clientFormGroup.controls['pays'].touched" class="text-danger">
+                Pays is required
+              </small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bouton action -->
+
+  <div class="col-md-12 text-right mb-3">
+    <button type="button" class="btn btn-danger" (click)="cancelClick()">
+      <i class="fa fa-ban" aria-hidden="true"></i>&nbsp;
+      Annuler
+    </button>
+    <button [disabled]="clientFormGroup.invalid" type="submit" class="btn btn-primary ml-2">
+      <i class="fa fa-save" aria-hidden="true"></i>&nbsp;
+      Enregistrer
+    </button>
+  </div>
+    </form>
+  </div>
+
+
+
+
+</div>

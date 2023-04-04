@@ -1,9 +1,9 @@
 
 <div class="row mb-1 mr-0 customer-border">
 
-  <div class="col-md-2 border-right mt-1 mb-1">
+  <!-- <div class="col-md-2 border-right mt-1 mb-1">
       <div class="row text-center">
-        <div>Code art</div>
+        <div>Code cmd</div>
       </div>
   </div>
 
@@ -33,6 +33,56 @@
   <div class="row">
     <div>PT</div>
   </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+<ng-template #errors>
+  <div class="text-danger">
+    {{errorMessage}}
+  </div>
+</ng-template>
+
+
+
+<div class="card-body" *ngIf="ligneCommandes; else errors">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th> <th>Code article</th> <th>Designation</th> <th>Categorie</th> <th>Quantite</th>  <th>P.U</th> <th>Montant total</th> <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ligneCommande of ligneCommandes">
+        <td>{{ligneCommande.ID}}</td>
+        <td>{{ligneCommande.codearticle}}</td>
+        <td>{{ligneCommande.designation}}</td>
+        <td>{{ligneCommande.categorie}}</td>
+        <td>{{ligneCommande.quantite}}</td>
+        <td>{{ligneCommande.prixunitaire}}</td>
+        <td>{{ligneCommande.montanttotal}}</td>
+        <td *ngIf="authService.hasroles('ADMIN')">
+          <button (click)="handleDeleteLigneCommande(ligneCommande)" type="button" class="btn btn-danger">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </td>
+        <td *ngIf="authService.hasroles('ADMIN')">
+          <button (click)="handleEditLigneCommande(ligneCommande)" type="button" class="btn btn-success">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
 </div>
 
 
@@ -40,7 +90,7 @@
 
 
   <!-- Boutons action -->
-  <div class="col-md-2 mb-1 mt-1">
+  <!-- <div class="col-md-2 mb-1 mt-1">
 
     <div class="row">
       <div class="col-md-6">
@@ -52,7 +102,7 @@
         <button type="button" class="btn btn-link">Supprimer</button>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
 </div>

@@ -26,9 +26,6 @@ export class NouvelArtcleComponent implements OnInit {
     });
   }
 
-  // saveClick(): void {
-
-  // }
 
   cancelClick(): void {
     this.router.navigate(['dashboard/articles']);

@@ -39,6 +39,9 @@ import { NouvelUserComponent } from './pages/utilisateurs/nouvel-user/nouvel-use
 import { PageProfilComponent } from './pages/profil/page-profil/page-profil.component';
 import { ChangerMotDePasseComponent } from './pages/profil/changer-mot-de-passe/changer-mot-de-passe.component';
 import { EditArticleComponent } from './pages/articles/edit-article/edit-article.component';
+import { EditClientComponent } from './pages/clientvrai/edit-client/edit-client.component';
+import { EditCmdClientComponent } from './pages/cmd-client/edit-cmd-client/edit-cmd-client.component';
+import { EditLigneCmdComponent } from './pages/cmd-client/edit-ligne-cmd/edit-ligne-cmd.component';
 
 const routes: Routes = [
 
@@ -76,12 +79,24 @@ const routes: Routes = [
         component: PageClientComponent
       },
       {
+        path: 'editclient/:id',
+        component: EditClientComponent
+      },
+      {
         path: 'cmd',
         component: PageCmdCltComponent
       },
       {
         path: 'nouvellecommande',
         component: NouvelleCmdCltComponent
+      },
+      {
+        path: 'editcmdclient/:id',
+        component: EditCmdClientComponent
+      },
+      {
+        path: 'editlignecmd/:id',
+        component: EditLigneCmdComponent
       },
       {
         path: 'categories',

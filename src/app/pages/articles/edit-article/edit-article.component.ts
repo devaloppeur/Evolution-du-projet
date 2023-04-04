@@ -46,8 +46,8 @@ export class EditArticleComponent implements OnInit {
   handleUpdateArticle() {
     let a = this.articleFormGroup.value;
     a.code = this.article.code;
-    this.articleService.uodateArticle(a).subscribe({
-      next: (prod) => {
+    this.articleService.updateArticle(a).subscribe({
+      next: (article) => {
         alert("Article update successfully");
         this.articleFormGroup.reset();
       }, error: (err) => {

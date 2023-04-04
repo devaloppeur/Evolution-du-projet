@@ -1,6 +1,15 @@
 <div class="row mb-1 mr-0 customer-border">
+
+
+  <ng-template #errors>
+    <div class="text-danger">
+      {{errorMessage}}
+    </div>
+  </ng-template>
+
+
 <!-- Information client -->
-<div class="col-md-4 border-right mt-1 mb-1">
+<!-- <div class="col-md-4 border-right mt-1 mb-1">
   <div class="col">
     <div class="row">
       <div>Nom</div>
@@ -12,11 +21,11 @@
       <div>Telephone</div>
     </div>
   </div>
-</div>
+</div> -->
 
 
-<!-- Adresse du client -->
-<div class="col-md-4 border-right mt-1 mb-1">
+
+<!-- <div class="col-md-4 border-right mt-1 mb-1">
   <div class="col">
     <div class="row">
       <div>Adresse</div>
@@ -28,11 +37,45 @@
       <div>Pays</div>
     </div>
   </div>
+</div> -->
+
+
+<!-- Adresse du client -->
+<div class="card-body" *ngIf="clients; else errors">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th> <th>Nom</th> <th>Prenom</th>  <th>Telephone</th> <th>Adresse</th> <th>Ville</th> <th>Pays</th> <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of clients">
+        <td>{{client.ID}}</td>
+        <td>{{client.nom}}</td>
+        <td>{{client.prenom}}</td>
+        <td>{{client.telephone}}</td>
+        <td>{{client.adresse}}</td>
+        <td>{{client.ville}}</td>
+        <td>{{client.pays}}</td>
+        <td *ngIf="authService.hasroles('ADMIN')">
+          <button (click)="handleDeleteClient(client)" type="button" class="btn btn-danger">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </td>
+        <td *ngIf="authService.hasroles('ADMIN')">
+          <button (click)="handleEditClient(client)" type="button" class="btn btn-success">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
 </div>
 
 
 <!-- Boutons action -->
-<div class="col-md-3 border-right  mb-1 mt-1">
+<!-- <div class="col-md-3 border-right  mb-1 mt-1">
 
   <div class="row">
     <div class="col-md-4">
@@ -48,5 +91,5 @@
     </div>
 
   </div>
-</div>
+</div> -->
 </div>

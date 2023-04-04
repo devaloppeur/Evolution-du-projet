@@ -61,6 +61,9 @@ import { PageProfilComponent } from './pages/profil/page-profil/page-profil.comp
 import { ChangerMotDePasseComponent } from './pages/profil/changer-mot-de-passe/changer-mot-de-passe.component';
 import { HasAnyAuthorityDirective } from './directive/app-authority.directive';
 import { EditArticleComponent } from './pages/articles/edit-article/edit-article.component';
+import { EditClientComponent } from './pages/clientvrai/edit-client/edit-client.component';
+import { EditCmdClientComponent } from './pages/cmd-client/edit-cmd-client/edit-cmd-client.component';
+import { EditLigneCmdComponent } from './pages/cmd-client/edit-ligne-cmd/edit-ligne-cmd.component';
 
 
 // import { MenuTrueComponent } from './menu_true/menu_true.component';
@@ -128,6 +131,9 @@ import { EditArticleComponent } from './pages/articles/edit-article/edit-article
     ChangerMotDePasseComponent,
     HasAnyAuthorityDirective,
     EditArticleComponent,
+    EditClientComponent,
+    EditCmdClientComponent,
+    EditLigneCmdComponent,
 
   ],
   imports: [

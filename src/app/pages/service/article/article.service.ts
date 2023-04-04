@@ -7,6 +7,9 @@ import { UUID } from 'angular2-uuid';
   providedIn: 'root'
 })
 export class ArticleService {
+  addNewClient(client: any) {
+    throw new Error('Method not implemented.');
+  }
 
   private articles!: Array<Article>;
 
@@ -54,7 +57,7 @@ export class ArticleService {
     return of(article);
    }
 
-   public uodateArticle(article: Article): Observable<Article> {
+   public updateArticle(article: Article): Observable<Article> {
     this.articles = this.articles.map(a => (a.code===article.code)?article:a);
     return of(article);
    }
