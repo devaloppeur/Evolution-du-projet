@@ -38,7 +38,7 @@ export class DetailCmdComponent implements OnInit {
   handleDeleteLigneCommande(ligneCommande: LigneCommande) {
     let conf=confirm("Are you sure?")
     if (conf==false) return;
-     this.ligneCommandeService.deleteLigneCommande(ligneCommande.ID).subscribe({
+     this.ligneCommandeService.deleteLigneCommande(ligneCommande?.ID).subscribe({
       next: (data) => {
         // this.handleGetAllArticles();
         let index = this.ligneCommandes.indexOf(ligneCommande);

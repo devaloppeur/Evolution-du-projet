@@ -21,7 +21,7 @@ export class LignecommandeService {
     ];
   }
 
-  public deleteLigneCommande(id:string): Observable<boolean> {
+  public deleteLigneCommande(id?:string): Observable<boolean> {
     this.ligneCommandes = this.ligneCommandes.filter(ligneCommande => ligneCommande.ID != id);
     return of(true);
    }

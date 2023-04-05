@@ -12,16 +12,13 @@
   <div class="row col p-3 customer-border">
 
     <!-- Formulaire à remplir pour la commande -->
-    <div class="col-md-6 border-right">
+    <div class="col-md-6">
       <form>
+        <!-- <div class="form-group">
+          <input type="text" class="form-control" formControlName="nom" placeholder="Date commande">
+        </div> -->
         <div class="form-group">
-          <input type="text" class="form-control"  placeholder="Code commande">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Date commande">
-        </div>
-        <div class="form-group">
-          <select class="form-select" aria-label="Default select example">
+          <select class="form-select" aria-label="Default select example" id ="selectclient">
             <option selected>Selectionner un client</option>
             <option value="1">Boissons</option>
             <option value="2">desert </option>
@@ -31,23 +28,6 @@
       </form>
     </div>
 
-    <!-- Details info client et commande -->
-    <div class="col-md-6">
-      <div class="col">
-        <div class="row">
-          <div>Nom</div>
-        </div>
-        <div class="row">
-          <div>Prenom</div>
-        </div>
-        <div class="row">
-          <div>Telephone</div>
-        </div>
-        <div class="row">
-          <div>Statut commande</div>
-        </div>
-      </div>
-    </div>
   </div>
 
 
@@ -55,19 +35,25 @@
   <!-- La div des ajouts des lignes de commande -->
 
     <div class="row col mt-2 p-3 customer-border">
-      <form>
+      <form [formGroup]="ligneCommandeFormGroup">
         <div class="form-row">
           <div class="col">
-            <input type="text" class="form-control" placeholder="Code article">
+            <input type="text" class="form-control" formControlName="codearticle" placeholder="Code article">
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="Quantite">
+            <input type="text" class="form-control" formControlName="designation" placeholder="designation">
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="Prix unitaire">
+            <input type="text" class="form-control" formControlName="categorie" placeholder="categorie">
           </div>
           <div class="col">
-            <button type="button" class="btn btn-success">+</button>
+            <input type="number" class="form-control" formControlName="quantite" placeholder="quantite">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" formControlName="prixunitaire" placeholder="Prix unitaire">
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-success" (click)="onAdd()">+</button>
           </div>
       </div>
       </form>
@@ -75,11 +61,36 @@
 
     <!-- La div qui recupere les lignes de commande ajoutes au fur et à mesure -->
     <div class="row col mt-2 p-3 customer-border" style="max-height: 300px; overflow-y: scroll;">
-      <app-detail-cmd></app-detail-cmd>
+      <!-- <app-detail-cmd></app-detail-cmd> -->
+
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th> <th>Code article</th> <th>Designation</th> <th>Categorie</th> <th>Quantite</th>  <th>P.U</th> <th>Montant total</th> <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ligneCommande of ligneCommandes">
+              <td>{{ligneCommande.ID}}</td>
+              <td>{{ligneCommande.codearticle}}</td>
+              <td>{{ligneCommande.designation}}</td>
+              <td>{{ligneCommande.categorie}}</td>
+              <td>{{ligneCommande.quantite}}</td>
+              <td>{{ligneCommande.prixunitaire}}</td>
+              <td>{{ligneCommande.montanttotal}}</td>
+
+
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
     </div>
 
     <div class="row col mt-2 p-3 text-right customer-border">
-      <h3>Total de la commande: total</h3>
+      <h3>Total de la commande: {{this.total}}</h3>
     </div>
 
   <!-- Bouton action -->
