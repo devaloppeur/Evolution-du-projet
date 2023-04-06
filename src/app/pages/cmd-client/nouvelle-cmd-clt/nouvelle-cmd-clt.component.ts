@@ -39,12 +39,12 @@ export class NouvelleCmdCltComponent implements OnInit {
 
   onAdd() {
 
-    this.ligneCommande.codearticle= this.ligneCommandeFormGroup.get('codearticle')?.value ?? '',
-    this.ligneCommande.designation= this.ligneCommandeFormGroup.get('designation')?.value ?? '',
-    this.ligneCommande.categorie= this.ligneCommandeFormGroup.get('categorie')?.value ?? '',
-    this.ligneCommande.quantite= this.ligneCommandeFormGroup.get('quantite')?.value ?? 0,
-    this.ligneCommande.prixunitaire= this.ligneCommandeFormGroup.get('prixunitaire')?.value ?? 0,
-    this.ligneCommande.montanttotal= this.ligneCommande?.quantite! * this.ligneCommande?.prixunitaire! ?? 0
+    this.ligneCommande.codearticle= this.ligneCommandeFormGroup.get('codearticle')?.value ?? '';
+    this.ligneCommande.designation= this.ligneCommandeFormGroup.get('designation')?.value ?? '';
+    this.ligneCommande.categorie= this.ligneCommandeFormGroup.get('categorie')?.value ?? '';
+    this.ligneCommande.quantite= this.ligneCommandeFormGroup.get('quantite')?.value ?? 0;
+    this.ligneCommande.prixunitaire= this.ligneCommandeFormGroup.get('prixunitaire')?.value ?? 0;
+    this.ligneCommande.montanttotal= this.ligneCommande?.quantite! * this.ligneCommande?.prixunitaire! ?? 0;
 
     let client =document.getElementById('selectclient') as HTMLInputElement | null;
 
