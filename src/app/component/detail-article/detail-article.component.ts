@@ -31,7 +31,7 @@ export class DetailArticleComponent implements OnInit {
 
   handleGetAllArticles() {
 
-    this.articleService.getAllProducts().subscribe({
+    this.articleService.getAllArticles().subscribe({
       next: (data) => {
         this.articles = data;
       },

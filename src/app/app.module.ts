@@ -64,6 +64,7 @@ import { EditArticleComponent } from './pages/articles/edit-article/edit-article
 import { EditClientComponent } from './pages/clientvrai/edit-client/edit-client.component';
 import { EditCmdClientComponent } from './pages/cmd-client/edit-cmd-client/edit-cmd-client.component';
 import { EditLigneCmdComponent } from './pages/cmd-client/edit-ligne-cmd/edit-ligne-cmd.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 // import { MenuTrueComponent } from './menu_true/menu_true.component';
@@ -139,6 +140,7 @@ import { EditLigneCmdComponent } from './pages/cmd-client/edit-ligne-cmd/edit-li
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     LazyLoadImageModule,
     ReactiveFormsModule,
         RouterModule.forRoot([

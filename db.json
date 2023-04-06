@@ -1,13 +1,85 @@
 {
-  "products": [
+  "articles": [
     {
-
+      "id": 1,
+      "code": 444,
+      "designation": "Salade",
+      "categorie": "dessert",
+      "prix": 12000
     },
     {
-
+      "id": 2,
+      "code": 444,
+      "designation": "Djino",
+      "categorie": "Boisson",
+      "prix": 2000
     },
     {
-
+      "id": 3,
+      "code": 444,
+      "designation": "Ndolaet",
+      "categorie": "plat",
+      "prix": 2500
+    }
+  ],
+  "commandes": [
+    {
+      "ID": 1,
+      "client": "cccc",
+      "datecommande": "string",
+      "montanttotal": 555,
+      "ligneCommande": [
+        {
+          "ID": 1,
+          "codearticle": "string",
+          "designation": "string",
+          "categorie": "string",
+          "quantite": 4444,
+          "prixunitaire": 555,
+          "montanttotal": 25000
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "designation": "Poulet DG",
+      "categorie": "Plat",
+      "prix": 15000
+    },
+    {
+      "client": "cccc",
+      "datecommande": "string",
+      "montanttotal": 555,
+      "ligneCommande": [
+        {
+          "ID": 1,
+          "codearticle": "string",
+          "designation": "string",
+          "categorie": "string",
+          "quantite": 4444,
+          "prixunitaire": 555,
+          "montanttotal": 25000
+        }
+      ],
+      "id": 2
+    },
+    {
+      "ID": 1,
+      "client": "cccc",
+      "datecommande": "string",
+      "montanttotal": 555,
+      "ligneCommande": [
+        {
+          "ID": 1,
+          "codearticle": "string",
+          "designation": "string",
+          "categorie": "string",
+          "quantite": 4444,
+          "prixunitaire": 555,
+          "montanttotal": 25000
+        }
+      ],
+      "id": 3
     }
   ]
 }
